@@ -20,6 +20,15 @@ body {
     
     
   }
+  @keyframes box {
+    0%{
+
+    }
+    100%{
+    box-shadow: 1px 1px 50px red;
+
+    }
+  }
   #hire-btn{
     width: 70px;
     height: 25px;
@@ -31,22 +40,13 @@ body {
     border: none;
     border-radius: 3px;
   }
-@keyframes box {
-    0%{
 
-    }
-    100%{
-    box-shadow: 1px 1px 50px red;
-
-    }
-  }
 #nav h2 {
     color: #ffb742;
     font-weight: bold;
     /* text-shadow: 1px 1px 5px rgb(255, 174, 0); */
     padding: 25px 0px 25px 150px;
-    animation-name: port;
-    animation-duration: 3s;
+    animation: port 3s;
     margin-left: -100px;
     
   }
@@ -58,7 +58,7 @@ body {
         margin-left: -100px;
     }
   }
-  #nav #nav-list{
+  #nav > #nav-list{
     width: 60%;
     display: flex;
     justify-content: space-evenly;
@@ -66,7 +66,7 @@ body {
     
    
   }
-  #nav a {
+  #nav > #nav-list a {
     padding: 10px 25px;
     border-radius: 20px;
     text-decoration: none;
@@ -84,30 +84,40 @@ body {
   #nav > ul > li:last-child a {
     margin: 0px;
   }
+  #nav #list{
+    display: none;
+    color: white;
+    font-size: 25px;
+    margin-right: 30px;
+    
+  }
+  #nav > #list > i:hover{
+    text-shadow: 1px 1px 3px #ffb748;
+  }
   
-  .main {
+  #home {
     height: 640px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
   }
-  .main > h4 {
+  #home > h4 {
     font-size: 32px;
     font-weight: 600;
     color: #fff;
   }
-  .main > h4 > span {
+  #home > h4 > span {
     color: #ffb742;
     text-decoration: underline;
   }
-  .main > #title {
+  #home > #title {
     font-size: 44px;
     font-weight: 600;
     color: #fff;
     margin-top: 8px;
   }
-  .main > #subtitle {
+  #home > #subtitle {
     font-size: 16px;
     color: #ccc;
     margin-top: 20px;
@@ -128,6 +138,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
     border-radius: 20px;
     padding: 50px 30px;
     border: 1px solid transparent;
@@ -158,6 +169,7 @@ body {
 }
 #guarantee > #skill > h3{
   font-size: 20px;
+  color: #ffb742;
 }
 
 #guarantee > #skill h3:hover{
@@ -166,11 +178,6 @@ body {
   transition: all 0.4s ease;
   
 }
-
-#guarantee  h3 {
-    color: #ffb742;
-    font-size: 28px;
-  }
   
 .seprator {
     margin: 50px 50px 30px;
@@ -180,29 +187,30 @@ body {
     color: #ffb742;
     border-radius: 12px;
   }
-  .about {
+  #about {
     display: flex;
     justify-content: space-between;
     align-items: center;
     gap: 80px;
     padding: 0 50px;
   }
-  .about > img {
+  #about > img {
+    display: none;
     width: 280px;
   }
-  .about > .info > h3 {
+  #about > .info > h3 {
     color: #fff;
     font-size: 32px;
     font-weight: 600;
     margin-bottom: 10px;
   }
-  .about > .info > p {
+  #about > .info > p {
     color: #ccc;
     font-size: 14px;
     line-height: 20px;
     text-align: justify;
   }
-  .about > .info > button {
+  #about > .info > button {
     margin-top: 30px;
   }
   
@@ -211,23 +219,23 @@ body {
     justify-content: space-around;
     padding: 0 50px;
   }
-  .skills > .left {
+  .skills > #left {
     width: 680px;
   }
   
-  .skills > .left > .info > h3 {
+  .skills > #left > .info > h3 {
     color: #fff;
     font-size: 30px;
     margin-bottom: 20px;
   }
-  .skills > .left > .info > p {
+  .skills > #left > .info > p {
     font-size: 14px;
     color: #ccc;
   }
-  .skills > .left > button {
+  .skills > #left > button {
     margin-top: 30px;
   }
-  .skills > .right {
+  .skills > #right {
     height: 120px;
     width: 420px;
     display: flex;
@@ -236,7 +244,7 @@ body {
     flex-wrap: wrap;
     gap: 12px;
   }
-  .skills > .right > .item {
+  .skills > #right > .item {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -245,7 +253,7 @@ body {
     width: 50px;
     border-radius: 10px;
   }
-  .skills > .right > .item > i {
+  .skills > #right > .item > i {
     font-size: 34px;
     color: #fff;
   }
@@ -255,7 +263,7 @@ body {
     padding: 80px 50px 40px;
     margin-top: 100px;
   }
-  footer > .start {
+  footer > #start {
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -268,7 +276,7 @@ body {
     left: 15%;
   }
   
-  footer > .start > button {
+  footer > #start > button {
     background: transparent;
     border: none;
     cursor: pointer;
@@ -276,40 +284,40 @@ body {
     border-radius: 100px;
     transition: all 0.3s ease;
   }
-  footer > .start > button:hover {
+  footer > #start > button:hover {
     background-color: #fff;
     border-color: #fff;
   }
-  footer > .start > button i{
+  footer > #start > button i{
     /* border: 1px solid #df2d2d; */
     font-size: 30px;
   }
-  footer > .cols {
+  footer > #contact {
     display: flex;
     align-items: start;
   }
-  footer > .cols > .about-cols {
+  footer > #contact > #about-cols {
     flex: 3;
   }
-  footer > .cols > .about-cols > h3,
+  footer > #contact > #about-cols > h3,
   p {
     color: #ffb742;
     margin-bottom: 20px;
   }
-  footer > .cols > .about-col > p {
+  footer > #contact > #about-cols > p {
     color: #ccc;
     font-size: 13px;
   }
-  footer > .cols > .links-col {
+  footer > #contact > .links-col {
     flex: 3;
   }
-  footer > .cols > .links-col > h4,
-  footer > .cols > .news-col > h4 {
+  footer > #contact > .links-col > h4,
+  footer > #contact > .news-col > h4 {
     color: #fff;
     margin-bottom: 20px;
   }
   
-  footer > .cols > .links-col > a {
+  footer > #contact > .links-col > a {
     display: flex;
     position: relative;
     left: 15px;
@@ -319,19 +327,19 @@ body {
     line-height: 25px;
     transition: color 0.3s ease;
   }
-  footer > .cols > .links-col > a:hover {
+  footer > #contact > .links-col > a:hover {
     color: #ffb742;
   }
-  footer > .cols > .news-col {
+  footer > #contact > .news-col {
     flex: 3;
   }
   
-  footer > .cols > .news-col > form {
+  footer > #contact > .news-col > form {
     width: 100%;
     margin-top: -20px;
     position: relative;
   }
-  footer > .cols > .news-col > form > input, textarea{
+  footer > #contact > .news-col > form > input, textarea{
     width: 100%;
     background-color: #212529;
     color: #ccc;
@@ -340,18 +348,18 @@ body {
     font-weight: 400;
     margin-top: 10px;
   }
-  footer > .cols > .news-col > form > input {
+  footer > #contact > .news-col > form > input {
     padding: 13px;
     border-radius: 100px;
     
   }
-  footer > .cols > .news-col > form textarea{
+  footer > #contact > .news-col > form textarea{
     height: 100px;
     border-radius: 20px;
     padding: 10px 0px 0px 20px;
 
   }
-  footer > .cols > .news-col > form > button {
+  footer > #contact > .news-col > form > button {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -366,12 +374,12 @@ body {
     cursor: pointer;
     transition: background-color 0.3s ease;
   }
-  footer > .cols > .news-col > form > button:hover {
+  footer > #contact > .news-col > form > button:hover {
     /* background-color: #fb8c00; */
     box-shadow: 1px 1px 10px rgb(228, 220, 188);
     transition: all 0.4s ease;
   }
-  footer > .cols > .news-col > form > button > i {
+  footer > #contact > .news-col > form > button > i {
     font-size: 26px;
   }
   @media screen and (max-width: 1100px) {
@@ -495,17 +503,49 @@ body {
       flex-basis: 100%;
     }
   }
-  @media screen and(max-width:480px) {
-    .main > p > .title {
+  @media (max-width:480px) {
+    #nav{
+      height: 60px;
+    }
+    #nav > h2{
       font-size: 18px;
     }
-    .main > .p > .subtitle {
-      font-size: 10px;
+    #nav > #nav-list{
+      display: none;
     }
-    .guarantee > .item > .info > h3 {
-      font-size: 20px;
+    #nav #list{
+      display: block;
     }
-    .guarantee > .item > .info > p {
+
+    #home{
+      /* padding-top: 80px; */
+      margin-top: -100px;
+    }
+    #home > h4{
+      font-size: 26px;
+    }
+    #home > #title {
+      /* padding-top: 10px; */
+      font-size: 16px;
+    }
+    #home > #subtitle {
       font-size: 12px;
+    }
+
+    .seprator{
+      margin-left: 20px;
+      margin-bottom: 0px;
+    }
+    .guarantee > #skill   h3 {
+      font-size: 18px;
+      
+    }
+    
+    #guarantee > #skill{
+      margin-left: 20px;
+      
+    }
+    #about > .info > p{
+      word-spacing: 2px;
     }
   }
